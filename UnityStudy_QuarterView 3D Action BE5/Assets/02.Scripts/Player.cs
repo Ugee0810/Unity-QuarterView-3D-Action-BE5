@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameManager manager;
+
+    public Camera followCamera;
+
     public float moveSpeed;
     public float jumpPower;
+    public AudioSource jumpSound;
+
     public GameObject[] weapons;
     public bool[] hasWeapons;
+
     public GameObject[] granades;
     public int hasGranades;
     public GameObject granadeObj;
-    public Camera followCamera;
-    public GameManager manager;
 
-    public AudioSource jumpSound;
+
 
     public int ammo;
     public int coin;
@@ -28,13 +33,13 @@ public class Player : MonoBehaviour
 
     float hAxis;
     float vAxis;
+
     bool  wDown;
     bool  jDown;
     bool  fDown;
     bool  gDown;
     bool  rDown;
     bool  iDown;
-    // 무기 교체
     bool sDown1;
     bool sDown2;
     bool sDown3;
@@ -92,8 +97,7 @@ public class Player : MonoBehaviour
     {
         hAxis = Input.GetAxisRaw("Horizontal");
         vAxis = Input.GetAxisRaw("Vertical");
-        // Input.GetButton() - 누를 때 적용 및 유지
-        wDown = Input.GetButton("Walk");
+        wDown = Input.GetButton/*누를 때 적용 및 유지*/("Walk"); 
         jDown = Input.GetButtonDown("Jump");
         iDown = Input.GetButtonDown("Interation");
         fDown = Input.GetButton("Fire1");
